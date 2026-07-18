@@ -1,0 +1,236 @@
+{
+  "modelTopology": {
+    "class_name": "Sequential",
+    "config": {
+      "name": "sequential_1",
+      "layers": [
+        {
+          "class_name": "Dense",
+          "config": {
+            "units": 256,
+            "activation": "relu",
+            "use_bias": true,
+            "kernel_initializer": {
+              "class_name": "VarianceScaling",
+              "config": {
+                "scale": 1,
+                "mode": "fan_avg",
+                "distribution": "normal",
+                "seed": null
+              }
+            },
+            "bias_initializer": {
+              "class_name": "Zeros",
+              "config": {}
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "activity_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null,
+            "name": "hidden1",
+            "trainable": true,
+            "batch_input_shape": [
+              null,
+              784
+            ],
+            "dtype": "float32"
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "units": 128,
+            "activation": "relu",
+            "use_bias": true,
+            "kernel_initializer": {
+              "class_name": "VarianceScaling",
+              "config": {
+                "scale": 1,
+                "mode": "fan_avg",
+                "distribution": "normal",
+                "seed": null
+              }
+            },
+            "bias_initializer": {
+              "class_name": "Zeros",
+              "config": {}
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "activity_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null,
+            "name": "hidden2",
+            "trainable": true
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "units": 64,
+            "activation": "relu",
+            "use_bias": true,
+            "kernel_initializer": {
+              "class_name": "VarianceScaling",
+              "config": {
+                "scale": 1,
+                "mode": "fan_avg",
+                "distribution": "normal",
+                "seed": null
+              }
+            },
+            "bias_initializer": {
+              "class_name": "Zeros",
+              "config": {}
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "activity_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null,
+            "name": "hidden3",
+            "trainable": true
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "units": 32,
+            "activation": "relu",
+            "use_bias": true,
+            "kernel_initializer": {
+              "class_name": "VarianceScaling",
+              "config": {
+                "scale": 1,
+                "mode": "fan_avg",
+                "distribution": "normal",
+                "seed": null
+              }
+            },
+            "bias_initializer": {
+              "class_name": "Zeros",
+              "config": {}
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "activity_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null,
+            "name": "hidden4",
+            "trainable": true
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "units": 10,
+            "activation": "softmax",
+            "use_bias": true,
+            "kernel_initializer": {
+              "class_name": "VarianceScaling",
+              "config": {
+                "scale": 1,
+                "mode": "fan_avg",
+                "distribution": "normal",
+                "seed": null
+              }
+            },
+            "bias_initializer": {
+              "class_name": "Zeros",
+              "config": {}
+            },
+            "kernel_regularizer": null,
+            "bias_regularizer": null,
+            "activity_regularizer": null,
+            "kernel_constraint": null,
+            "bias_constraint": null,
+            "name": "output",
+            "trainable": true
+          }
+        }
+      ]
+    },
+    "keras_version": "tfjs-layers 4.22.0",
+    "backend": "tensor_flow.js"
+  },
+  "weightSpecs": [
+    {
+      "name": "hidden1/kernel",
+      "shape": [
+        784,
+        256
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "hidden1/bias",
+      "shape": [
+        256
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "hidden2/kernel",
+      "shape": [
+        256,
+        128
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "hidden2/bias",
+      "shape": [
+        128
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "hidden3/kernel",
+      "shape": [
+        128,
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "hidden3/bias",
+      "shape": [
+        64
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "hidden4/kernel",
+      "shape": [
+        64,
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "hidden4/bias",
+      "shape": [
+        32
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "output/kernel",
+      "shape": [
+        32,
+        10
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "output/bias",
+      "shape": [
+        10
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "format": "layers-model",
+  "generatedBy": "TensorFlow.js Node API"
+}

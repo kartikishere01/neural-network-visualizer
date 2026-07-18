@@ -1,0 +1,11 @@
+node_modules/
+client/node_modules/
+server/node_modules/
+client/dist/
+.env
+.env.local
+*.log
+
+# ─── Keep the pre-trained model cache bundled with the project ───────────────
+# server/mnist-model-cache/ is intentionally NOT ignored so the model
+# ships with the repo and Railway/Render never needs to retrain from scratch.
