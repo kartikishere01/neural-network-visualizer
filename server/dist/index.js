@@ -50,12 +50,16 @@ app.use(express_1.default.json({ limit: '10mb' }));
 // API routes
 app.use('/api', inference_1.default);
 // Serve static assets in production
-const clientBuildPath = path.join(__dirname, '..', 'client', 'dist');
+// Use process.cwd() so this resolves correctly whether running via
+// ts-node (dev) or compiled node dist/index.js (production on Railway)
+const clientBuildPath = path.join(process.cwd(), 'client', 'dist');
 app.use(express_1.default.static(clientBuildPath));
 app.get('*', (req, res) => {
     res.sendFile(path.join(clientBuildPath, 'index.html'), (err) => {
-        if (err)
+        if (err) {
+            console.error(`Error serving index.html from ${path.join(clientBuildPath, 'index.html')}:`, err);
             res.status(200).send('API Server is running. Client build not found.');
+        }
     });
 });
 // ── Start Express FIRST, then train in background ───────────────────────────
