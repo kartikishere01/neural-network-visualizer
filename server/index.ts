@@ -17,9 +17,9 @@ app.use(express.json({ limit: '10mb' }));
 app.use('/api', inferenceRouter);
 
 // Serve static assets in production
-// Use process.cwd() so this resolves correctly whether running via
-// ts-node (dev) or compiled node dist/index.js (production on Railway)
-const clientBuildPath = path.join(process.cwd(), 'client', 'dist');
+// Determine project root depending on whether we started inside root or server directory
+const projectRoot = process.cwd().endsWith('server') ? path.join(process.cwd(), '..') : process.cwd();
+const clientBuildPath = path.join(projectRoot, 'client', 'dist');
 app.use(express.static(clientBuildPath));
 
 app.get('*', (req, res) => {

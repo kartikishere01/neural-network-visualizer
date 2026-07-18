@@ -4,7 +4,8 @@ import * as mnist from 'mnist';
 import * as path from 'path';
 import * as fs from 'fs';
 
-const MODEL_DIR  = path.join(process.cwd(), 'server', 'mnist-model-cache');
+const projectRoot = process.cwd().endsWith('server') ? path.join(process.cwd(), '..') : process.cwd();
+const MODEL_DIR  = path.join(projectRoot, 'server', 'mnist-model-cache');
 const MODEL_PATH = `file://${MODEL_DIR.replace(/\\/g, '/')}`;
 
 let model:        tf.LayersModel | null = null;
