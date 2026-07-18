@@ -17,31 +17,6 @@ app.use(express.json({ limit: '10mb' }));
 // API routes
 app.use('/api', inferenceRouter);
 
-// Debug route to inspect paths on the production server
-app.get('/api/debug-files', (req, res) => {
-  try {
-    const projectRoot = process.cwd().endsWith('server') ? path.join(process.cwd(), '..') : process.cwd();
-    const clientDistPath = path.join(projectRoot, 'client', 'dist');
-    const rootFiles = fs.existsSync(projectRoot) ? fs.readdirSync(projectRoot) : [];
-    const clientFiles = fs.existsSync(path.join(projectRoot, 'client')) ? fs.readdirSync(path.join(projectRoot, 'client')) : [];
-    const distFiles = fs.existsSync(clientDistPath) ? fs.readdirSync(clientDistPath) : [];
-
-    res.json({
-      cwd: process.cwd(),
-      dirname: __dirname,
-      projectRoot,
-      clientDistPath,
-      existsRoot: fs.existsSync(projectRoot),
-      existsClient: fs.existsSync(path.join(projectRoot, 'client')),
-      existsDist: fs.existsSync(clientDistPath),
-      rootFiles,
-      clientFiles,
-      distFiles
-    });
-  } catch (err: any) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 // Serve static assets in production
 // Determine project root depending on whether we started inside root or server directory
