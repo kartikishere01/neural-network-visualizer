@@ -24,7 +24,10 @@ app.use(express.static(clientBuildPath));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(clientBuildPath, 'index.html'), (err) => {
-    if (err) res.status(200).send('API Server is running. Client build not found.');
+    if (err) {
+      console.error(`Error serving index.html from ${path.join(clientBuildPath, 'index.html')}:`, err);
+      res.status(200).send('API Server is running. Client build not found.');
+    }
   });
 });
 
