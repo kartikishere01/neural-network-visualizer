@@ -11,14 +11,6 @@
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
-    "canvas-confetti": "^1.9.3",
-    "lucide-react": "^0.399.0",
-    "neural-network-visualizer": "file:..",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "three": "^0.166.0"
-  },
-  "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
     "@types/canvas-confetti": "^1.6.4",
     "@types/react": "^19.0.0",
@@ -26,9 +18,16 @@
     "@types/three": "^0.166.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
+    "canvas-confetti": "^1.9.3",
+    "lucide-react": "^0.399.0",
+    "neural-network-visualizer": "file:..",
     "postcss": "^8.4.38",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.0",
+    "three": "^0.166.0",
     "typescript": "^5.5.2",
     "vite": "^5.3.1"
-  }
+  },
+  "devDependencies": {}
 }
